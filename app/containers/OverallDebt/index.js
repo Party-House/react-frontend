@@ -15,11 +15,12 @@ import injectReducer from 'utils/injectReducer';
 import makeSelectOverallDebt from './selectors';
 import reducer from './reducer';
 import messages from './messages';
+import DebtsPanel from '../../components/DebtsPanel';
 
 function OverallDebt() {
   return (
     <div>
-      <FormattedMessage {...messages.header} />
+      <DebtsPanel />
     </div>
   );
 }
