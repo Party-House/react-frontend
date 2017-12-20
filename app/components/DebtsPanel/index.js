@@ -28,23 +28,33 @@ function DebtsPanel(props) {
           <Table>
             <TableHeader displaySelectAll={false}>
               <TableRow>
-                <TableHeaderColumn>Nome</TableHeaderColumn>
-                <TableHeaderColumn>Pago</TableHeaderColumn>
-                <TableHeaderColumn>A pagar</TableHeaderColumn>
-                <TableHeaderColumn>Recebido</TableHeaderColumn>
-                <TableHeaderColumn>Transferido</TableHeaderColumn>
+                <TableHeaderColumn>
+                  <FormattedMessage {...messages.name} />
+                </TableHeaderColumn>
+                <TableHeaderColumn>
+                  <FormattedMessage {...messages.debt} />
+                </TableHeaderColumn>
+                <TableHeaderColumn>
+                  <FormattedMessage {...messages.paid} />
+                </TableHeaderColumn>
+                <TableHeaderColumn>
+                  <FormattedMessage {...messages.received} />
+                </TableHeaderColumn>
+                <TableHeaderColumn>
+                  <FormattedMessage {...messages.transfered} />
+                </TableHeaderColumn>
               </TableRow>
             </TableHeader>
             <TableBody displayRowCheckbox={false}>
-              {props.users.map((user) => {
-                 <TableRow>
+              {props.users.map((user) => (
+                <TableRow>
                   <TableRowColumn>{user.name}</TableRowColumn>
-                  <TableRowColumn>{user.paid}</TableRowColumn>
                   <TableRowColumn>{user.debt}</TableRowColumn>
+                  <TableRowColumn>{user.paid}</TableRowColumn>
                   <TableRowColumn>{user.received}</TableRowColumn>
                   <TableRowColumn>{user.transfered}</TableRowColumn>
                 </TableRow>
-              })}
+              ))}
             </TableBody>
           </Table>
         </Paper>

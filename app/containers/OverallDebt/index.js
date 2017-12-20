@@ -17,16 +17,17 @@ import reducer from './reducer';
 import messages from './messages';
 import DebtsPanel from '../../components/DebtsPanel';
 
-function OverallDebt() {
+function OverallDebt(props) {
   return (
     <div>
-      <DebtsPanel />
+      <DebtsPanel users={props.overalldebt.users}/>
     </div>
   );
 }
 
 OverallDebt.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  overalldebt: PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
