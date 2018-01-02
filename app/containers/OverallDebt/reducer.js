@@ -4,32 +4,21 @@
  *
  */
 
+import { handle } from 'redux-pack';
 import { fromJS } from 'immutable';
 import {
-  DEFAULT_ACTION,
+  GET_DEBTS_SUCCESS,
 } from './constants';
 
 const initialState = fromJS({
   loading: false,
-  users: [{
-    name: "Andre",
-    paid: 10,
-    debt: 10,
-    received: 15,
-    transfered: 0,
-  }, {
-    name: "Duilio",
-    paid: 14,
-    debt: 8,
-    received: 10,
-    transfered: 20,
-  }],
+  users: [],
 });
 
 function overallDebtReducer(state = initialState, action) {
   switch (action.type) {
-    case DEFAULT_ACTION:
-      return state;
+    case GET_DEBTS_SUCCESS:
+      return state.set('users', action.payload);
     default:
       return state;
   }

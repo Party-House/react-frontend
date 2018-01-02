@@ -18,7 +18,7 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import { CardStyle } from './styles';
+import { CardStyle, RowColumnStyle } from './styles';
 
 function DebtsPanel(props) {
   return (
@@ -46,13 +46,23 @@ function DebtsPanel(props) {
               </TableRow>
             </TableHeader>
             <TableBody displayRowCheckbox={false}>
-              {props.users.map((user) => (
-                <TableRow>
-                  <TableRowColumn>{user.name}</TableRowColumn>
-                  <TableRowColumn>{user.debt}</TableRowColumn>
-                  <TableRowColumn>{user.paid}</TableRowColumn>
-                  <TableRowColumn>{user.received}</TableRowColumn>
-                  <TableRowColumn>{user.transfered}</TableRowColumn>
+              {props.users.map((user, index) => (
+                <TableRow hoverable key={index}>
+                  <TableRowColumn style={RowColumnStyle}>
+                    {user.user_name}
+                  </TableRowColumn>
+                  <TableRowColumn style={RowColumnStyle}>
+                    {user.debt}
+                  </TableRowColumn>
+                  <TableRowColumn style={RowColumnStyle}>
+                    {user.paid}
+                  </TableRowColumn>
+                  <TableRowColumn style={RowColumnStyle}>
+                    {user.received}
+                  </TableRowColumn>
+                  <TableRowColumn style={RowColumnStyle}>
+                    {user.transfered}
+                  </TableRowColumn>
                 </TableRow>
               ))}
             </TableBody>
@@ -66,10 +76,10 @@ function DebtsPanel(props) {
 DebtsPanel.propTypes = {
   users: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
-    paid: PropTypes.number,
-    debt: PropTypes.number,
-    received: PropTypes.number,
-    transfered: PropTypes.number,
+    paid: PropTypes.string,
+    debt: PropTypes.string,
+    received: PropTypes.string,
+    transfered: PropTypes.string,
   }))
 };
 

@@ -14,15 +14,21 @@ import { compose } from 'redux';
 import injectReducer from 'utils/injectReducer';
 import makeSelectOverallDebt from './selectors';
 import reducer from './reducer';
+import { getDebts } from './actions';
 import messages from './messages';
 import DebtsPanel from '../../components/DebtsPanel';
 
-function OverallDebt(props) {
-  return (
-    <div>
-      <DebtsPanel users={props.overalldebt.users}/>
-    </div>
-  );
+class OverallDebt extends React.PureComponent {
+  componentDidMount() {
+    return this.props.dispatch(getDebts());
+  }
+  render() {
+    return (
+      <div>
+        <DebtsPanel users={this.props.overalldebt.users}/>
+      </div>
+    );
+  }
 }
 
 OverallDebt.propTypes = {

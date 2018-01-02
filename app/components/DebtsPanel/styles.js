@@ -6,4 +6,8 @@ const CardStyle = {
   display: 'inline-block',
 };
 
-export { CardStyle }
+const RowColumnStyle = {
+  textAlign: 'center',
+};
+
+export { CardStyle, RowColumnStyle }

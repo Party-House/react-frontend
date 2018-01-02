@@ -10,3 +10,5 @@
  */
 
 export const DEFAULT_LOCALE = 'en';
+
+export const API_URI = 'http://api.partyhouse.finance.net:4567/'
