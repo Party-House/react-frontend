@@ -3,8 +3,6 @@
  * OverallDebt reducer
  *
  */
-
-import { handle } from 'redux-pack';
 import { fromJS } from 'immutable';
 import {
   GET_DEBTS_SUCCESS,
