@@ -12,7 +12,7 @@ export default defineMessages({
   },
   debt: {
     id: 'app.components.DebtsPanel.debt',
-    defaultMessage: 'A Pagar',
+    defaultMessage: 'Valor Devido',
   },
   paid: {
     id: 'app.components.DebtsPanel.paid',

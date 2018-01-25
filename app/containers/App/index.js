@@ -16,6 +16,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import OverallDebt from 'containers/OverallDebt'
+import AddPurchase from 'containers/AddPurchase';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 export default function App() {
@@ -23,7 +24,8 @@ export default function App() {
     <div>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/finance/" component={OverallDebt} />
+        <Route exact path="/finance/" component={OverallDebt} />
+        <Route path="/finance/add-purchase" component={AddPurchase}/>
         <Route component={NotFoundPage} />
       </Switch>
     </div>

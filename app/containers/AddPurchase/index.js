@@ -1,6 +1,6 @@
 /**
  *
- * OverallDebt
+ * AddPurchase
  *
  */
 
@@ -11,32 +11,27 @@ import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
-import makeSelectOverallDebt from './selectors';
+import makeSelectAddPurchase from './selectors';
 import reducer from './reducer';
-import { getDebts } from './actions';
 import messages from './messages';
-import DebtsPanel from '../../components/DebtsPanel';
+import PurchaseForm from '../../components/PurchaseForm';
 
-class OverallDebt extends React.PureComponent {
-  componentDidMount() {
-    return this.props.dispatch(getDebts());
-  }
+export class AddPurchase extends React.PureComponent {
   render() {
     return (
       <div>
-        <DebtsPanel users={this.props.overalldebt.users}/>
+        <PurchaseForm />
       </div>
     );
   }
 }
 
-OverallDebt.propTypes = {
+AddPurchase.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  overalldebt: PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
-  overalldebt: makeSelectOverallDebt(),
+  addpurchase: makeSelectAddPurchase(),
 });
 
 function mapDispatchToProps(dispatch) {
@@ -49,4 +44,4 @@ const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
 export default compose(
   withConnect,
-)(OverallDebt);
+)(AddPurchase);
