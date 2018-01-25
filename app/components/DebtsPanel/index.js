@@ -18,7 +18,9 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import { CardStyle, RowColumnStyle } from './styles';
+import {
+  CardStyle, RowColumnStyle,
+  DebtHeaderStyle } from './styles';
 
 function DebtsPanel(props) {
   return (
@@ -31,7 +33,7 @@ function DebtsPanel(props) {
                 <TableHeaderColumn>
                   <FormattedMessage {...messages.name} />
                 </TableHeaderColumn>
-                <TableHeaderColumn>
+                <TableHeaderColumn style={DebtHeaderStyle}>
                   <FormattedMessage {...messages.debt} />
                 </TableHeaderColumn>
                 <TableHeaderColumn>

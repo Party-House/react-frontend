@@ -12,11 +12,11 @@ export default defineMessages({
   },
   debt: {
     id: 'app.components.DebtsPanel.debt',
-    defaultMessage: 'Pago',
+    defaultMessage: 'A Pagar',
   },
   paid: {
     id: 'app.components.DebtsPanel.paid',
-    defaultMessage: 'A Pagar',
+    defaultMessage: 'Pago',
   },
   received: {
     id: 'app.components.DebtsPanel.received',

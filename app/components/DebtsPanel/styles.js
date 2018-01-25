@@ -10,4 +10,8 @@ const RowColumnStyle = {
   textAlign: 'center',
 };
 
-export { CardStyle, RowColumnStyle }
+const DebtHeaderStyle = {
+  color: '#cc1023',
+};
+
+export { CardStyle, RowColumnStyle, DebtHeaderStyle }
