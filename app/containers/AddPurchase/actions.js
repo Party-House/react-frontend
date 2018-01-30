@@ -5,11 +5,12 @@
  */
 
 import {
-  DEFAULT_ACTION,
+  SET_BUYER,
 } from './constants';
 
-export function defaultAction() {
+export function setBuyer(value) {
   return {
-    type: DEFAULT_ACTION,
+    type: SET_BUYER,
+    buyer: value,
   };
 }

@@ -16,6 +16,7 @@ import reducer from './reducer';
 import { getDebts } from './actions';
 import messages from './messages';
 import DebtsPanel from '../../components/DebtsPanel';
+import GenericCard from '../../components/GenericCard';
 
 class OverallDebt extends React.PureComponent {
   componentDidMount() {
@@ -24,7 +25,9 @@ class OverallDebt extends React.PureComponent {
   render() {
     return (
       <div>
-        <DebtsPanel users={this.props.overalldebt.users}/>
+        <GenericCard>
+          <DebtsPanel users={this.props.overalldebt.users}/>
+        </GenericCard>
       </div>
     );
   }

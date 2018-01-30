@@ -14,13 +14,20 @@ import { compose } from 'redux';
 import makeSelectAddPurchase from './selectors';
 import reducer from './reducer';
 import messages from './messages';
+import { setBuyer } from './actions';
 import PurchaseForm from '../../components/PurchaseForm';
+import GenericCard from '../../components/GenericCard';
 
 export class AddPurchase extends React.PureComponent {
   render() {
     return (
       <div>
-        <PurchaseForm />
+        <GenericCard>
+          <PurchaseForm
+            users={this.props.addpurchase.userList}
+            buyer={this.props.addpurchase.buyer}
+            changeBuyer={(value)=>this.props.dispatch(setBuyer(value))} />
+        </GenericCard>
       </div>
     );
   }
@@ -28,6 +35,7 @@ export class AddPurchase extends React.PureComponent {
 
 AddPurchase.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  addpurchase: PropTypes.object
 };
 
 const mapStateToProps = createStructuredSelector({
