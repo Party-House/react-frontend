@@ -12,3 +12,4 @@ export const SET_BUYER = 'app/AddPurchase/SET_BUYER';
 export const SET_TITLE = 'app/AddPurchase/SET_TITLE';
 export const SET_DESCRIPTION = 'app/AddPurchase/SET_DESCRIPTION';
 export const SET_VALUE = 'app/AddPurchase/SET_VALUE';
+export const SET_DATE = 'app/AddPurchase/SET_DATE';

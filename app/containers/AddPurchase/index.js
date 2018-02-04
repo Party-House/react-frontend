@@ -15,7 +15,7 @@ import makeSelectAddPurchase from './selectors';
 import reducer from './reducer';
 import messages from './messages';
 import {
-  getUsers, setBuyer, setTitle,
+  getUsers, setBuyer, setTitle, setDate,
   setDescription, setValue, sendPurchase
 } from './actions';
 import PurchaseForm from '../../components/PurchaseForm';
@@ -36,11 +36,13 @@ export class AddPurchase extends React.PureComponent {
             changeTitle={(value)=>this.props.dispatch(setTitle(value))}
             changeDescription={(value)=>this.props.dispatch(setDescription(value))}
             changeValue={(value)=>this.props.dispatch(setValue(value))}
+            changeDate={(value)=>this.props.dispatch(setDate(value))}
             submit={()=>this.props.dispatch(sendPurchase({
               reason: this.props.addpurchase.title,
               comments: this.props.addpurchase.description,
               value: this.props.addpurchase.value,
               user_id: this.props.addpurchase.buyer,
+              purchase_date: this.props.addpurchase.date,
               is_durable: false
               },[], (() => this.props.history.push('/finance'))
             ))}

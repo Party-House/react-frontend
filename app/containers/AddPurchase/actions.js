@@ -5,7 +5,7 @@
  */
 
 import {
-  SEND_PURCHASE,
+  SEND_PURCHASE, SET_DATE,
   GET_USERS, GET_USERS_SUCCESS,
   SET_BUYER, SET_TITLE,
   SET_DESCRIPTION, SET_VALUE
@@ -72,3 +72,12 @@ export function setValue(value) {
     value: value,
   };
 }
+
+export function setDate(value) {
+  return {
+    type: SET_DATE,
+    value: value,
+  };
+}
+
+

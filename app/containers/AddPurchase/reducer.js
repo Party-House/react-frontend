@@ -9,7 +9,7 @@ import {
   GET_USERS_SUCCESS,
   SET_BUYER, SET_TITLE,
   SET_DESCRIPTION,
-  SET_VALUE
+  SET_VALUE, SET_DATE
 } from './constants';
 
 const initialState = fromJS({
@@ -19,6 +19,7 @@ const initialState = fromJS({
   value: 0,
   date: "",
   buyer: 0,
+  date:"",
 });
 
 function addPurchaseReducer(state = initialState, action) {
@@ -31,6 +32,8 @@ function addPurchaseReducer(state = initialState, action) {
       return state.set('description', action.description);
     case SET_VALUE:
       return state.set('value', action.value);
+    case SET_DATE:
+      return state.set('date', action.value);
     case GET_USERS_SUCCESS:
       return state.set('userList', action.payload)
     default:

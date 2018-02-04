@@ -11,6 +11,7 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import DatePicker from 'material-ui/DatePicker';
 
 function PurchaseForm(props) {
   return (
@@ -45,6 +46,12 @@ function PurchaseForm(props) {
               <MenuItem key={user.id} value={user.id} primaryText={user.name} />
             ))}
           </SelectField>
+      </div>
+      <div>
+        <DatePicker
+          hintText="Data da Compra"
+          onChange={(event, date)=>props.changeDate(date)}
+          autoOk/>
       </div>
       <div>
         <RaisedButton label={"Enviar"} primary={true} onClick={(event)=>props.submit()}/>
