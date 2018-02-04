@@ -9,19 +9,46 @@ import PropTypes from 'prop-types';
 import messages from './messages';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
 function PurchaseForm(props) {
   return (
     <div>
-      <SelectField
-          floatingLabelText="Comprador"
-          onChange={(event, index, value)=>props.changeBuyer(value)}
-          value={props.buyer}
-        >
-          {props.users.map((user) => (
-            <MenuItem key={user.id} value={user.id} primaryText={user.name} />
-          ))}
-        </SelectField>
+      <div>
+        <TextField
+          hintText="Titulo"
+          multiLine={true}
+          onChange={(event)=> props.changeTitle(event.target.value)}
+        />
+      </div>
+      <div>
+        <TextField
+          hintText="Descrição"
+          multiLine={true}
+          onChange={(event)=> props.changeDescription(event.target.value)}
+        />
+      </div>
+      <div>
+        <TextField
+          hintText="Valor"
+          onChange={(event)=> props.changeValue(event.target.value)}
+        />
+      </div>
+      <div>
+        <SelectField
+            floatingLabelText="Comprador"
+            onChange={(event, index, value)=>props.changeBuyer(value)}
+            value={props.buyer}
+          >
+            {props.users.map((user) => (
+              <MenuItem key={user.id} value={user.id} primaryText={user.name} />
+            ))}
+          </SelectField>
+      </div>
+      <div>
+        <RaisedButton label={"Enviar"} primary={true} onClick={(event)=>props.submit()}/>
+      </div>
     </div>
   );
 }

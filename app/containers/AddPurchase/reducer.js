@@ -6,15 +6,14 @@
 
 import { fromJS } from 'immutable';
 import {
-  SET_BUYER,
+  GET_USERS_SUCCESS,
+  SET_BUYER, SET_TITLE,
+  SET_DESCRIPTION,
+  SET_VALUE
 } from './constants';
 
 const initialState = fromJS({
-  userList: [
-    {id: 1, name: 'Andre'},
-    {id: 2, name: 'Duilio'},
-    {id: 3, name: 'Victor'},
-    {id: 4, name: 'Vinicius'}],
+  userList: [],
   title: "",
   description: "",
   value: 0,
@@ -26,6 +25,14 @@ function addPurchaseReducer(state = initialState, action) {
   switch (action.type) {
     case SET_BUYER:
       return state.set('buyer', action.buyer);
+    case SET_TITLE:
+      return state.set('title', action.title);
+    case SET_DESCRIPTION:
+      return state.set('description', action.description);
+    case SET_VALUE:
+      return state.set('value', action.value);
+    case GET_USERS_SUCCESS:
+      return state.set('userList', action.payload)
     default:
       return state;
   }
