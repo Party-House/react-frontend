@@ -40,10 +40,12 @@ function NavBar(props) {
     </IconMenu>
   );
   return (
-    <AppBar
-      title={<FormattedMessage {...messages.title} />}
-      iconElementLeft={leftMenu}
-    />
+    <div>
+      <AppBar
+        title={<FormattedMessage {...messages.title} />}
+        iconElementLeft={leftMenu}
+      />
+    </div>
   );
 }
 

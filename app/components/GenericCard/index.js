@@ -13,7 +13,7 @@ function GenericCard(props) {
   return (
     <div>
       <center>
-        <Paper style={CardStyle} zDepth={3} >
+        <Paper zDepth={3} >
           {props.children}
         </Paper>
       </center>
