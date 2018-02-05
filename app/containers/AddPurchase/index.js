@@ -18,6 +18,7 @@ import {
   getUsers, setBuyer, setTitle, setDate,
   setDescription, setValue, sendPurchase
 } from './actions';
+import AppNavBar from '../AppNavBar';
 import PurchaseForm from '../../components/PurchaseForm';
 import GenericCard from '../../components/GenericCard';
 
@@ -28,6 +29,7 @@ export class AddPurchase extends React.PureComponent {
   render() {
     return (
       <div>
+        <AppNavBar history={this.props.history}/>
         <GenericCard>
           <PurchaseForm
             users={this.props.addpurchase.userList}

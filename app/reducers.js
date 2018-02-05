@@ -9,6 +9,7 @@ import { LOCATION_CHANGE } from 'react-router-redux';
 import languageProviderReducer from 'containers/LanguageProvider/reducer';
 import overallDebtReducer from 'containers/OverallDebt/reducer';
 import addPurchaseReducer from 'containers/AddPurchase/reducer';
+import appNavBarReducer from 'containers/AppNavBar/reducer';
 
 /*
  * routeReducer
@@ -47,6 +48,7 @@ export default function createReducer(injectedReducers) {
     language: languageProviderReducer,
     overallDebt: overallDebtReducer,
     addPurchase: addPurchaseReducer,
+    appNavBar: appNavBarReducer,
     ...injectedReducers,
   });
 }
