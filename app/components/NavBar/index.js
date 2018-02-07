@@ -11,6 +11,7 @@ import IconButton from 'material-ui/IconButton';
 import MenuItem from 'material-ui/MenuItem';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
+import { SmallIcon } from './styles';
 
 import EditorAttachMoney from 'material-ui/svg-icons/editor/attach-money';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
@@ -24,7 +25,7 @@ function NavBar(props) {
     >
       <MenuItem
         primaryText={<FormattedMessage {...messages.finance} />}
-        leftIcon={<EditorAttachMoney/>}
+        leftIcon={<EditorAttachMoney style={SmallIcon}/>}
         rightIcon={<ArrowDropRight/>}
         menuItems={[
           <MenuItem
