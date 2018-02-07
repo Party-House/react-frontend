@@ -25,7 +25,7 @@ function DebtsPanel(props) {
             title={props.users[index].user_name}
             subtitle={<FormattedMessage
               {...messages.debtValue}
-              values={{debt: props.users[index].debt}}
+              values={{debt: <b>{props.users[index].debt}</b>}}
             />}
             actAsExpander={true}
             showExpandableButton={true}
