@@ -6,25 +6,21 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  name: {
-    id: 'app.components.DebtsPanel.name',
-    defaultMessage: 'Nome',
-  },
-  debt: {
+  debtValue: {
     id: 'app.components.DebtsPanel.debt',
-    defaultMessage: 'Valor Devido',
+    defaultMessage: `Valor Devido {debt}`,
   },
   paid: {
     id: 'app.components.DebtsPanel.paid',
-    defaultMessage: 'Pago',
+    defaultMessage: 'Pago:',
   },
   received: {
     id: 'app.components.DebtsPanel.received',
-    defaultMessage: 'Recebido',
+    defaultMessage: 'Recebido:',
   },
   transfered: {
     id: 'app.components.DebtsPanel.transfered',
-    defaultMessage: 'Transferido',
+    defaultMessage: 'Transferido:',
   },
 
 });

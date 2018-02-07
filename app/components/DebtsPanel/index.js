@@ -18,53 +18,34 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 import {
+  Card, CardHeader, CardText
+} from 'material-ui/Card';
+import {
   CardStyle, RowColumnStyle,
   DebtHeaderStyle } from './styles';
 
 function DebtsPanel(props) {
   return (
-    <Table>
-      <TableHeader displaySelectAll={false}>
-        <TableRow>
-          <TableHeaderColumn>
-            <FormattedMessage {...messages.name} />
-          </TableHeaderColumn>
-          <TableHeaderColumn style={DebtHeaderStyle}>
-            <FormattedMessage {...messages.debt} />
-          </TableHeaderColumn>
-          <TableHeaderColumn>
-            <FormattedMessage {...messages.paid} />
-          </TableHeaderColumn>
-          <TableHeaderColumn>
-            <FormattedMessage {...messages.received} />
-          </TableHeaderColumn>
-          <TableHeaderColumn>
-            <FormattedMessage {...messages.transfered} />
-          </TableHeaderColumn>
-        </TableRow>
-      </TableHeader>
-      <TableBody displayRowCheckbox={false}>
-        {props.users.map((user, index) => (
-          <TableRow hoverable key={index}>
-            <TableRowColumn style={RowColumnStyle}>
-              {user.user_name}
-            </TableRowColumn>
-            <TableRowColumn style={RowColumnStyle}>
-              {user.debt}
-            </TableRowColumn>
-            <TableRowColumn style={RowColumnStyle}>
-              {user.paid}
-            </TableRowColumn>
-            <TableRowColumn style={RowColumnStyle}>
-              {user.received}
-            </TableRowColumn>
-            <TableRowColumn style={RowColumnStyle}>
-              {user.transfered}
-            </TableRowColumn>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+    <div>
+      {props.users.map((user, index) => (
+        <Card key={index}>
+          <CardHeader
+            title={props.users[index].user_name}
+            subtitle={<FormattedMessage
+              {...messages.debtValue}
+              values={{debt: props.users[index].debt}}
+            />}
+            actAsExpander={true}
+            showExpandableButton={true}
+          />
+          <CardText expandable={true}>
+            <b><FormattedMessage {...messages.paid} /></b> {props.users[index].paid}<br/>
+            <b><FormattedMessage {...messages.received} /></b> {props.users[index].received}<br/>
+            <b><FormattedMessage {...messages.transfered} /></b> {props.users[index].transfered}<br/>
+          </CardText>
+        </Card>
+      ))}
+    </div>
   );
 }
 
