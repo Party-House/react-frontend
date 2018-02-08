@@ -8,7 +8,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { FormattedMessage } from 'react-intl';
-import messages from './messages';
 import {
   Card, CardHeader, CardText
 } from 'material-ui/Card';
@@ -19,21 +18,18 @@ import {
 function DebtsPanel(props) {
   return (
     <div>
-      {props.users.map((user, index) => (
+      {props.infoList.map((message, index) => (
         <Card key={index}>
           <CardHeader
-            title={props.users[index].user_name}
-            subtitle={<FormattedMessage
-              {...messages.debtValue}
-              values={{debt: <b>{props.users[index].debt}</b>}}
-            />}
+            title={message.title}
+            subtitle={message.subtitle}
             actAsExpander={true}
             showExpandableButton={true}
           />
           <CardText expandable={true}>
-            <b><FormattedMessage {...messages.paid} /></b> {props.users[index].paid}<br/>
-            <b><FormattedMessage {...messages.received} /></b> {props.users[index].received}<br/>
-            <b><FormattedMessage {...messages.transfered} /></b> {props.users[index].transfered}<br/>
+            {message.details.map((content, con_index) =>
+              <div key={`${index}-${con_index}`}>{content}</div>
+            )}
           </CardText>
         </Card>
       ))}
@@ -42,17 +38,15 @@ function DebtsPanel(props) {
 }
 
 DebtsPanel.propTypes = {
-  users: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-    paid: PropTypes.string,
-    debt: PropTypes.string,
-    received: PropTypes.string,
-    transfered: PropTypes.string,
+  infoList: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.node,
+    subtitle: PropTypes.node,
+    details: PropTypes.arrayOf(PropTypes.node)
   }))
 };
 
 DebtsPanel.defaultProps = {
-  users: []
+  infoList: []
 };
 
 export default DebtsPanel;

@@ -6,8 +6,20 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  header: {
-    id: 'app.containers.OverallDebt.header',
-    defaultMessage: 'This is OverallDebt container !',
+  debtValue: {
+    id: 'app.components.DebtsPanel.debt',
+    defaultMessage: `Valor Devido: {debt}`,
+  },
+  paid: {
+    id: 'app.components.DebtsPanel.paid',
+    defaultMessage: 'Pago:',
+  },
+  received: {
+    id: 'app.components.DebtsPanel.received',
+    defaultMessage: 'Recebido:',
+  },
+  transfered: {
+    id: 'app.components.DebtsPanel.transfered',
+    defaultMessage: 'Transferido:',
   },
 });

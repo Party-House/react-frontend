@@ -24,11 +24,25 @@ class OverallDebt extends React.PureComponent {
     return this.props.dispatch(getDebts());
   }
   render() {
+    let itens = []
+    this.props.overalldebt.users.map((user) => {
+      itens.push({
+        title: user.user_name,
+        subtitle: <FormattedMessage
+          {...messages.debtValue}
+          values={{debt: <b>{user.debt}</b>}} />,
+        details: [
+          <div><b><FormattedMessage {...messages.paid} /></b> {user.paid}</div>,
+          <div><b><FormattedMessage {...messages.received} /></b> {user.received}</div>,
+          <div><b><FormattedMessage {...messages.transfered} /></b> {user.transfered}</div>
+        ]
+      })
+    })
     return (
       <div>
         <AppNavBar history={this.props.history}/>
         <GenericCard>
-          <DebtsPanel users={this.props.overalldebt.users}/>
+          <DebtsPanel infoList={itens}/>
         </GenericCard>
       </div>
     );
