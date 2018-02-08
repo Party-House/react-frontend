@@ -16,7 +16,7 @@ import reducer from './reducer';
 import { getDebts } from './actions';
 import messages from './messages';
 import AppNavBar from '../AppNavBar';
-import DebtsPanel from '../../components/DebtsPanel';
+import CardsList from '../../components/CardsList';
 import GenericCard from '../../components/GenericCard';
 
 class OverallDebt extends React.PureComponent {
@@ -42,7 +42,7 @@ class OverallDebt extends React.PureComponent {
       <div>
         <AppNavBar history={this.props.history}/>
         <GenericCard>
-          <DebtsPanel infoList={itens}/>
+          <CardsList infoList={itens}/>
         </GenericCard>
       </div>
     );
