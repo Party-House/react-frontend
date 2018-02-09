@@ -17,6 +17,7 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from 'containers/HomePage/Loadable';
 import OverallDebt from 'containers/OverallDebt'
 import AddPurchase from 'containers/AddPurchase';
+import BankDetails from 'containers/BankDetails';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/finance/" component={OverallDebt} />
         <Route path="/finance/add-purchase" component={AddPurchase}/>
+        <Route path="/finance/accounts" component={BankDetails}/>
         <Route component={NotFoundPage} />
       </Switch>
     </div>
