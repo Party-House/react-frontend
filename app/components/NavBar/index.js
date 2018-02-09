@@ -5,6 +5,7 @@
 */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
@@ -35,6 +36,10 @@ function NavBar(props) {
           <MenuItem
             primaryText={<FormattedMessage {...messages.addPurchase} />}
             onClick={(event) => props.addPurchaseRedirect()}
+          />,
+          <MenuItem
+            primaryText={<FormattedMessage {...messages.bankDetails} />}
+            onClick={(event) => props.bankDetailsRedirect()}
           />
         ]}
       />
@@ -51,7 +56,9 @@ function NavBar(props) {
 }
 
 NavBar.propTypes = {
-
+  overallDebtRedirect: PropTypes.func,
+  addPurchaseRedirect: PropTypes.func,
+  bankDetailsRedirect: PropTypes.func
 };
 
 export default NavBar;

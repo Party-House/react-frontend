@@ -22,4 +22,8 @@ export default defineMessages({
     id: 'app.components.NavBar.addPurchase',
     defaultMessage: 'Adicionar Compra',
   },
+  bankDetails: {
+    id: 'app.components.NavBar.bankDetails',
+    defaultMessage: 'Dados Bancários',
+  },
 });
