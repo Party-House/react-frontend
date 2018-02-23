@@ -6,8 +6,8 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  header: {
-    id: 'app.components.MonthSelector.header',
-    defaultMessage: 'This is the MonthSelector component !',
+  send: {
+    id: 'app.components.MonthSelector.send',
+    defaultMessage: 'Consutar',
   },
 });

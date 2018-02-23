@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import SelectField from 'material-ui/SelectField';
+import RaisedButton from 'material-ui/RaisedButton';
 import MenuItem from 'material-ui/MenuItem';
 
 function MonthSelector(props) {
@@ -18,7 +19,7 @@ function MonthSelector(props) {
       <center>
         <SelectField
           floatingLabelText="Mês"
-          onChange={(event, index, value)=>console.log(value)}
+          onChange={(event, index, value)=>props.changeMonth(value)}
           value={Number(props.month)}
         >
           {props.monthsList.map((month, index) => (
@@ -34,6 +35,9 @@ function MonthSelector(props) {
             <MenuItem key={year} value={year} primaryText={year} />
           ))}
         </SelectField>
+        <div>
+          <RaisedButton label={<FormattedMessage {...messages.send} />} primary={true} onClick={(event)=>props.submit()}/>
+        </div>
       </center>
     </div>
   );

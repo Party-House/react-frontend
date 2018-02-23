@@ -15,7 +15,7 @@ import injectReducer from 'utils/injectReducer';
 import makeSelectMonthlyPurchases from './selectors';
 import reducer from './reducer';
 import {
-  getCurrentDate
+  getCurrentDate, setMonth, setYear, getPurchases
 } from './actions';
 import messages from './messages';
 import MonthSelector from '../../components/MonthSelector';
@@ -32,8 +32,10 @@ export class MonthlyPurchases extends React.PureComponent { // eslint-disable-li
           yearList={this.props.monthlypurchases.yearList}
           month={this.props.monthlypurchases.selectedMonth.month}
           year={this.props.monthlypurchases.selectedMonth.year}
-          changeMonth={()=>{}}
-          changeYear={()=>{}}
+          changeMonth={(month)=>this.props.dispatch(setMonth(month))}
+          changeYear={(year)=>this.props.dispatch(setYear(year))}
+          submit={()=>this.props.dispatch(getPurchases(
+            this.props.monthlypurchases.selectedMonth))}
         />
       </div>
     );
