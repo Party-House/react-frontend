@@ -38,6 +38,10 @@ function NavBar(props) {
             onClick={(event) => props.addPurchaseRedirect()}
           />,
           <MenuItem
+            primaryText={<FormattedMessage {...messages.monthlyPurchase} />}
+            onClick={(event) => props.monthlyPurchaseRedirect()}
+          />,
+          <MenuItem
             primaryText={<FormattedMessage {...messages.bankDetails} />}
             onClick={(event) => props.bankDetailsRedirect()}
           />

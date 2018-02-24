@@ -18,6 +18,7 @@ export default class AppNavBar extends React.PureComponent { // eslint-disable-l
         overallDebtRedirect={()=>this.props.history.push('/finance')}
         addPurchaseRedirect={()=>this.props.history.push('/finance/add-purchase')}
         bankDetailsRedirect={()=>this.props.history.push('/finance/accounts')}
+        monthlyPurchaseRedirect={()=>this.props.history.push('/finance/monthly')}
       />
     );
   }

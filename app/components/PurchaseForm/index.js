@@ -34,6 +34,7 @@ function PurchaseForm(props) {
         <div>
           <TextField
             hintText="Valor"
+            type="number"
             onChange={(event)=> props.changeValue(event.target.value)}
           />
         </div>

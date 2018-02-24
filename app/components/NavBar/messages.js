@@ -26,4 +26,8 @@ export default defineMessages({
     id: 'app.components.NavBar.bankDetails',
     defaultMessage: 'Dados Bancários',
   },
+  monthlyPurchase: {
+    id: 'app.components.NavBar.monthlyPurchase',
+    defaultMessage: 'Compras Mensais',
+  },
 });

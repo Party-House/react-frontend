@@ -19,24 +19,46 @@ import {
 } from './actions';
 import messages from './messages';
 import MonthSelector from '../../components/MonthSelector';
+import AppNavBar from '../AppNavBar';
+import CardsList from '../../components/CardsList';
+import GenericCard from '../../components/GenericCard';
 
 export class MonthlyPurchases extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
     return this.props.dispatch(getCurrentDate());
   }
   render() {
+    let itens = []
+    this.props.monthlypurchases.purchases.map((purchase) => {
+      itens.push({
+        title: purchase.reason,
+        subtitle: <FormattedMessage
+          {...messages.purchase}
+          values={{value: <b>{purchase.value}</b>, name:<b>{purchase.user_name}</b>}} />,
+        details: [
+          <div><b><FormattedMessage {...messages.comments} /></b> {purchase.comments}</div>,
+          <div><b><FormattedMessage {...messages.purchase_date} /></b> {purchase.purchase_date}</div>,
+        ]
+      })
+    })
     return (
       <div>
-        <MonthSelector
-          monthsList={this.props.monthlypurchases.monthsList}
-          yearList={this.props.monthlypurchases.yearList}
-          month={this.props.monthlypurchases.selectedMonth.month}
-          year={this.props.monthlypurchases.selectedMonth.year}
-          changeMonth={(month)=>this.props.dispatch(setMonth(month))}
-          changeYear={(year)=>this.props.dispatch(setYear(year))}
-          submit={()=>this.props.dispatch(getPurchases(
-            this.props.monthlypurchases.selectedMonth))}
-        />
+        <AppNavBar history={this.props.history}/>
+        <GenericCard>
+          <div>
+            <MonthSelector
+              monthsList={this.props.monthlypurchases.monthsList}
+              yearList={this.props.monthlypurchases.yearList}
+              month={this.props.monthlypurchases.selectedMonth.month}
+              year={this.props.monthlypurchases.selectedMonth.year}
+              changeMonth={(month)=>this.props.dispatch(setMonth(month))}
+              changeYear={(year)=>this.props.dispatch(setYear(year))}
+              submit={()=>this.props.dispatch(getPurchases(
+                this.props.monthlypurchases.selectedMonth))}
+            /> <br/>
+            <CardsList infoList={itens}/>
+          </div>
+        </GenericCard>
       </div>
     );
   }
