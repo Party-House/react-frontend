@@ -9,7 +9,7 @@ import {
   GET_PURCHASES, GET_PURCHASES_SUCESS
 } from './constants';
 import {
-  API_URI,
+  FINANCE_API,
 } from '../App/constants';
 
 export function getCurrentDate() {
@@ -40,7 +40,7 @@ export function setYear(year) {
 export function getPurchases(selectedMonth) {
   return dispatch => {
     dispatch({type: GET_PURCHASES});
-    return fetch(`${API_URI}purchases-in/${selectedMonth.month}/${selectedMonth.year}`, {
+    return fetch(`${FINANCE_API}purchases-in/${selectedMonth.month}/${selectedMonth.year}`, {
       mode: 'cors'
     }).then(
       response => {

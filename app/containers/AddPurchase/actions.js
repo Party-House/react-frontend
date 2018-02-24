@@ -11,13 +11,13 @@ import {
   SET_DESCRIPTION, SET_VALUE
 } from './constants';
 import {
-  API_URI,
+  FINANCE_API,
 } from '../App/constants';
 
 export function getUsers() {
   return dispatch => {
     dispatch({type: GET_USERS});
-    return fetch(`${API_URI}users`, {
+    return fetch(`${FINANCE_API}users`, {
       mode: 'cors'
     }).then(
       response => {
@@ -35,7 +35,7 @@ export function sendPurchase(purchase, exceptions, redirect) {
   }
   return dispatch => {
     dispatch({type: SEND_PURCHASE});
-    return fetch(`${API_URI}add-purchase`, {
+    return fetch(`${FINANCE_API}add-purchase`, {
       method: 'POST',
       body: JSON.stringify(data),
       mode: 'cors'

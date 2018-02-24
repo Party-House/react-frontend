@@ -8,13 +8,13 @@ import {
   GET_BANK_ACCOUNTS, GET_BANK_ACCOUNTS_SUCCESS
 } from './constants';
 import {
-  API_URI,
+  FINANCE_API,
 } from '../App/constants';
 
 export function getBankDetails() {
   return dispatch => {
     dispatch({type: GET_BANK_ACCOUNTS});
-    return fetch(`${API_URI}bank-accounts`, {
+    return fetch(`${FINANCE_API}bank-accounts`, {
       mode: 'cors'
     }).then(
       response => {

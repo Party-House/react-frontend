@@ -7,13 +7,13 @@ import {
   GET_DEBTS, GET_DEBTS_SUCCESS
 } from './constants';
 import {
-  API_URI,
+  FINANCE_API,
 } from '../App/constants';
 
 export function getDebts() {
   return dispatch => {
     dispatch({type: GET_DEBTS});
-    return fetch(`${API_URI}get-total-debt`, {
+    return fetch(`${FINANCE_API}get-total-debt`, {
       mode: 'cors'
     }).then(
       response => {
