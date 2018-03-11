@@ -19,6 +19,7 @@ import OverallDebt from 'containers/OverallDebt'
 import AddPurchase from 'containers/AddPurchase';
 import BankDetails from 'containers/BankDetails';
 import MonthlyPurchases from 'containers/MonthlyPurchases';
+import RegisterTransfer from 'containers/RegisterTransfer';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/finance/add-purchase" component={AddPurchase}/>
         <Route path="/finance/accounts" component={BankDetails}/>
         <Route path="/finance/monthly" component={MonthlyPurchases}/>
+        <Route path="/finance/transfer" component={RegisterTransfer}/>
         <Route component={NotFoundPage} />
       </Switch>
     </div>

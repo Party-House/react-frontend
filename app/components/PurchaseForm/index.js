@@ -40,14 +40,14 @@ function PurchaseForm(props) {
         </div>
         <div>
           <SelectField
-              floatingLabelText="Comprador"
-              onChange={(event, index, value)=>props.changeBuyer(value)}
-              value={props.buyer}
-            >
-              {props.users.map((user) => (
-                <MenuItem key={user.id} value={user.id} primaryText={user.name} />
-              ))}
-            </SelectField>
+            floatingLabelText="Comprador"
+            onChange={(event, index, value)=>props.changeBuyer(value)}
+            value={props.buyer}
+          >
+            {props.users.map((user) => (
+              <MenuItem key={user.id} value={user.id} primaryText={user.name} />
+            ))}
+          </SelectField>
         </div>
         <div>
           <DatePicker
