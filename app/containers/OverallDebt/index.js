@@ -11,6 +11,7 @@ import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
+import injectReducer from 'utils/injectReducer';
 import makeSelectOverallDebt from './selectors';
 import reducer from './reducer';
 import { getDebts } from './actions';
@@ -67,6 +68,9 @@ function mapDispatchToProps(dispatch) {
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
+const withReducer = injectReducer({ key: 'overallDebt', reducer });
+
 export default compose(
+  withReducer,
   withConnect,
 )(OverallDebt);

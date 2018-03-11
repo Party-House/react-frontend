@@ -11,6 +11,7 @@ import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
+import injectReducer from 'utils/injectReducer';
 import makeSelectAddPurchase from './selectors';
 import reducer from './reducer';
 import messages from './messages';
@@ -73,6 +74,9 @@ function mapDispatchToProps(dispatch) {
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
+const withReducer = injectReducer({ key: 'addPurchase', reducer });
+
 export default compose(
+  withReducer,
   withConnect,
 )(AddPurchase);

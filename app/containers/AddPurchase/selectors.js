@@ -21,5 +21,5 @@ const makeSelectAddPurchase = () => createSelector(
 
 export default makeSelectAddPurchase;
 export {
-  makeSelectAddPurchase,
+  selectAddPurchaseDomain,
 };

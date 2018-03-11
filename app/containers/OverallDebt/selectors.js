@@ -21,5 +21,5 @@ const makeSelectOverallDebt = () => createSelector(
 
 export default makeSelectOverallDebt;
 export {
-  makeSelectOverallDebt,
+  selectOverallDebtDomain,
 };
