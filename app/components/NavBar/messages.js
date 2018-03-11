@@ -30,4 +30,8 @@ export default defineMessages({
     id: 'app.components.NavBar.monthlyPurchase',
     defaultMessage: 'Compras Mensais',
   },
+  addTransfer: {
+    id: 'app.components.NavBar.addTransfer',
+    defaultMessage: 'Adicionar Transferência',
+  },
 });

@@ -7,7 +7,7 @@
 import {
   GET_USERS, GET_USERS_SUCCESS,
   SET_RECEIVER, SET_VALUE,
-  SET_PAYER
+  SET_PAYER, SEND_TRANSFER
 } from './constants';
 import {
   FINANCE_API,
@@ -23,6 +23,20 @@ export function getUsers() {
         response.json().then(json => dispatch({type: GET_USERS_SUCCESS, payload: json}))
       }
     )
+  };
+}
+
+export function sendTransfer(data, redirect) {
+  return dispatch => {
+    dispatch({type: SEND_TRANSFER});
+    return fetch(`${FINANCE_API}add-transfer`, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      mode: 'cors'
+    }).then(
+      (response) => {
+        redirect();
+      })
   };
 }
 

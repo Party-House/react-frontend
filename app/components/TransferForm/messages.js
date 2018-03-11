@@ -18,4 +18,8 @@ export default defineMessages({
     id: 'app.components.TransferForm.to',
     defaultMessage: 'Para',
   },
+  send: {
+    id: 'app.components.TransferForm.send',
+    defaultMessage: 'Enviar',
+  },
 });

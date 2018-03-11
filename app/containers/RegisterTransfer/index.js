@@ -17,8 +17,9 @@ import reducer from './reducer';
 import messages from './messages';
 import {
   getUsers, setValue,
-  setReceiver, setPayer
+  setReceiver, setPayer, sendTransfer
 } from './actions';
+import AppNavBar from '../AppNavBar';
 import GenericCard from '../../components/GenericCard';
 import TransferForm from '../../components/TransferForm';
 
@@ -30,6 +31,7 @@ export class RegisterTransfer extends React.PureComponent { // eslint-disable-li
   render() {
     return (
       <div>
+        <AppNavBar history={this.props.history} />
         <GenericCard>
           <TransferForm
             users={this.props.registertransfer.userList}
@@ -37,6 +39,10 @@ export class RegisterTransfer extends React.PureComponent { // eslint-disable-li
             changeReceiver={(value)=>this.props.dispatch(setReceiver(value))}
             changePayer={(value)=>this.props.dispatch(setPayer(value))}
             changeValue={(value)=>this.props.dispatch(setValue(value))}
+            submit={()=>this.props.dispatch(sendTransfer(
+              this.props.registertransfer.transferInfo,
+              (() => this.props.history.push('/finance'))
+            ))}
           />
         </GenericCard>
       </div>
@@ -46,6 +52,7 @@ export class RegisterTransfer extends React.PureComponent { // eslint-disable-li
 
 RegisterTransfer.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
   registertransfer: PropTypes.object,
 };
 

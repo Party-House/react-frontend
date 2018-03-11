@@ -12,6 +12,8 @@ import messages from './messages';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+
 
 function TransferForm(props) {
   return (
@@ -47,6 +49,10 @@ function TransferForm(props) {
             onChange={(event)=> props.changeValue(event.target.value)}
           />
         </div>
+        <div>
+          <RaisedButton label={<FormattedMessage {...messages.send} />} primary={true} onClick={(event)=>props.submit()}/>
+        </div>
+        <br />
       </center>
     </div>
   );

@@ -44,6 +44,10 @@ function NavBar(props) {
           <MenuItem
             primaryText={<FormattedMessage {...messages.bankDetails} />}
             onClick={(event) => props.bankDetailsRedirect()}
+          />,
+          <MenuItem
+            primaryText={<FormattedMessage {...messages.addTransfer} />}
+            onClick={(event) => props.addTransferRedirect()}
           />
         ]}
       />
