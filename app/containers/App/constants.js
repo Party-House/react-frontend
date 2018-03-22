@@ -11,4 +11,4 @@
 
 export const DEFAULT_LOCALE = 'en';
 
-export const FINANCE_API = 'https://party-hard-finance.herokuapp.com/'
+export const FINANCE_API = 'http://localhost:4567/';
