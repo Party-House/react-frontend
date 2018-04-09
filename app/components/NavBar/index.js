@@ -28,28 +28,13 @@ function NavBar(props) {
         primaryText={<FormattedMessage {...messages.finance} />}
         leftIcon={<EditorAttachMoney style={SmallIcon}/>}
         rightIcon={<ArrowDropRight/>}
-        menuItems={[
-          <MenuItem
-            primaryText={<FormattedMessage {...messages.overallDebt} />}
-            onClick={(event) => props.overallDebtRedirect()}
-          />,
-          <MenuItem
-            primaryText={<FormattedMessage {...messages.addPurchase} />}
-            onClick={(event) => props.addPurchaseRedirect()}
-          />,
-          <MenuItem
-            primaryText={<FormattedMessage {...messages.monthlyPurchase} />}
-            onClick={(event) => props.monthlyPurchaseRedirect()}
-          />,
-          <MenuItem
-            primaryText={<FormattedMessage {...messages.bankDetails} />}
-            onClick={(event) => props.bankDetailsRedirect()}
-          />,
-          <MenuItem
-            primaryText={<FormattedMessage {...messages.addTransfer} />}
-            onClick={(event) => props.addTransferRedirect()}
-          />
-        ]}
+        menuItems={
+          props.finance_links.map((content, index) =>
+            <MenuItem
+              primaryText={content.message}
+              onClick={(event) => content.link()}
+            />
+          )}
       />
     </IconMenu>
   );

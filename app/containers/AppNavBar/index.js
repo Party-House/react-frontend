@@ -15,11 +15,25 @@ export default class AppNavBar extends React.PureComponent { // eslint-disable-l
   render() {
     return (
       <NavBar
-        overallDebtRedirect={()=>this.props.history.push('/finance')}
-        addPurchaseRedirect={()=>this.props.history.push('/finance/add-purchase')}
-        bankDetailsRedirect={()=>this.props.history.push('/finance/accounts')}
-        monthlyPurchaseRedirect={()=>this.props.history.push('/finance/monthly')}
-        addTransferRedirect={()=>this.props.history.push('/finance/transfer')}
+        finance_links = {[
+          {
+            message: <FormattedMessage {...messages.overallDebt} />,
+            link: ()=>this.props.history.push('/finance')
+          },{
+            message: <FormattedMessage {...messages.addPurchase} />,
+            link: ()=>this.props.history.push('/finance/add-purchase')
+          },{
+            message: <FormattedMessage {...messages.monthlyPurchase} />,
+            link: ()=>this.props.history.push('/finance/monthly')
+          },{
+            message: <FormattedMessage {...messages.bankDetails} />,
+            link: ()=>this.props.history.push('/finance/accounts')
+          },{
+            message: <FormattedMessage {...messages.addTransfer} />,
+            link: ()=>this.props.history.push('/finance/transfer')
+          },
+
+        ]}
       />
     );
   }
