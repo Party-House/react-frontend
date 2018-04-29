@@ -14,7 +14,7 @@ import { compose } from 'redux';
 import injectReducer from 'utils/injectReducer';
 import makeSelectPurchaseList from './selectors';
 import reducer from './reducer';
-import { getPurchaseList } from './actions';
+import { getPurchaseList, updateIndex, markPurchase } from './actions';
 import messages from './messages';
 import PurchaseCard from '../../components/PurchaseCard';
 import GenericCard from '../../components/GenericCard';
@@ -30,10 +30,10 @@ export class PurchaseList extends React.PureComponent { // eslint-disable-line r
         <GenericCard>
           <PurchaseCard
             list={this.props.purchaselist.list}
-            listIndex={this.props.purchaselist.currentIndex}
-            updateIndex={()=>updateIndex(
-              this.props.purchaselist.list.length,
-              this.props.purchaselist.currentIndex)}
+            currentIndex={this.props.purchaselist.currentIndex}
+            updateIndex={(index)=>this.props.dispatch(updateIndex(index))}
+            submit={(id, currentIndex, length)=>this.props.dispatch(
+              markPurchase(id, currentIndex, length))}
           />
         </GenericCard>
       </div>

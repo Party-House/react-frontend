@@ -5,7 +5,8 @@
  */
 
 import {
-  GET_LIST, GET_LIST_SUCCESS, UPDATE_INDEX
+  GET_LIST, GET_LIST_SUCCESS, UPDATE_INDEX,
+  MARK_PURCHASE, MARK_PURCHASE_SUCCESS
 } from './constants';
 
 import {
@@ -25,9 +26,17 @@ export function getPurchaseList() {
   };
 }
 
-export function updateIndex(listLength, curIndex) {
+export function updateIndex(index) {
   return {
     type: UPDATE_INDEX,
-    newIndex: (curIndex + 1) % listLength,
+    newIndex: index,
   };
+}
+
+export function markPurchase(id, currentIndex, length) {
+  return {
+    type: MARK_PURCHASE_SUCCESS,
+    index: currentIndex,
+    newIndex: currentIndex % (length -1)
+  }
 }

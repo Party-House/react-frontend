@@ -6,8 +6,8 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  header: {
-    id: 'app.components.PurchaseCard.header',
-    defaultMessage: 'This is the PurchaseCard component !',
+  send: {
+    id: 'app.components.PurchaseCard.send',
+    defaultMessage: 'Marcar como comprado',
   },
 });
