@@ -11,4 +11,6 @@
 
 export const DEFAULT_LOCALE = 'en';
 
+export const PURCHASE_API = 'https://purchases-list.herokuapp.com/';
+
 export const FINANCE_API = 'https://party-hard-finance.herokuapp.com/'
