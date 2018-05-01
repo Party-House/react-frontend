@@ -17,6 +17,7 @@ import { SmallIcon } from './styles';
 import EditorAttachMoney from 'material-ui/svg-icons/editor/attach-money';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 import ArrowDropRight from 'material-ui/svg-icons/navigation-arrow-drop-right';
+import ActionShoppingCart from 'material-ui/svg-icons/action/shopping-cart';
 
 function NavBar(props) {
   const leftMenu = (
@@ -36,6 +37,18 @@ function NavBar(props) {
             />
           )}
       />
+      <MenuItem
+        primaryText={<FormattedMessage {...messages.purchases} />}
+        leftIcon={<ActionShoppingCart style={SmallIcon}/>}
+        rightIcon={<ArrowDropRight/>}
+        menuItems={
+          props.purchase_links.map((content, index) =>
+            <MenuItem
+              primaryText={content.message}
+              onClick={(event) => content.link()}
+            />
+          )}
+      />
     </IconMenu>
   );
   return (
@@ -49,9 +62,6 @@ function NavBar(props) {
 }
 
 NavBar.propTypes = {
-  overallDebtRedirect: PropTypes.func,
-  addPurchaseRedirect: PropTypes.func,
-  bankDetailsRedirect: PropTypes.func
 };
 
 export default NavBar;

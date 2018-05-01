@@ -32,8 +32,13 @@ export default class AppNavBar extends React.PureComponent { // eslint-disable-l
             message: <FormattedMessage {...messages.addTransfer} />,
             link: ()=>this.props.history.push('/finance/transfer')
           },
-
         ]}
+      purchase_links={[
+        {
+          message: <FormattedMessage {...messages.checklist} />,
+          link: ()=>this.props.history.push('/purchases')
+        }
+      ]}
       />
     );
   }

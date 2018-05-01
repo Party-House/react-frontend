@@ -26,4 +26,8 @@ export default defineMessages({
     id: 'app.components.NavBar.addTransfer',
     defaultMessage: 'Adicionar Transferência',
   },
+  checklist: {
+    id: 'app.components.NavBar.checklist',
+    defaultMessage: 'Lista de Compras',
+  },
 });

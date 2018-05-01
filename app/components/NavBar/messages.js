@@ -13,5 +13,9 @@ export default defineMessages({
   finance: {
     id: 'app.components.NavBar.finance',
     defaultMessage: 'Financeiro',
+  },
+  purchases: {
+    id: 'app.components.NavBar.purchases',
+    defaultMessage: 'Compras',
   }
 });

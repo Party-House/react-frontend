@@ -10,4 +10,8 @@ export default defineMessages({
     id: 'app.components.PurchaseCard.send',
     defaultMessage: 'Marcar como comprado',
   },
+  tutorial: {
+    id: 'app.components.PurchaseCard.tutorial',
+    defaultMessage: 'Deslize abaixo para percorrer a lista',
+  },
 });

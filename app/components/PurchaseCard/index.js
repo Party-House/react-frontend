@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
-
+import ActionInfoOutline from 'material-ui/svg-icons/action/info-outline';
 
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
@@ -17,6 +17,9 @@ import messages from './messages';
 function PurchaseCard(props) {
   return (
     <center>
+        <ActionInfoOutline />
+        <FormattedMessage {...messages.tutorial} />
+      <Divider/>
       <SwipeableViews
         enableMouseEvents
         index={props.currentIndex}

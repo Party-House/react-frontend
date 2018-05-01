@@ -34,9 +34,16 @@ export function updateIndex(index) {
 }
 
 export function markPurchase(id, currentIndex, length) {
-  return {
-    type: MARK_PURCHASE_SUCCESS,
-    index: currentIndex,
-    newIndex: currentIndex % (length -1)
-  }
+  return dispatch => {
+    dispatch({type: GET_LIST});
+    return fetch(`${PURCHASE_API}${id}/bought`, {
+      method: 'POST',
+      mode: 'cors'
+    }).then(
+      response => dispatch({
+        type: MARK_PURCHASE_SUCCESS,
+        index: currentIndex,
+        newIndex: currentIndex % (length -1)
+      }))
+  };
 }
